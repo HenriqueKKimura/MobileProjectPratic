@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MobileProjectPratic.Views.PesqCliente"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Background="#fff">
+        <Grid BackgroundColor="LightGray" HeightRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Entry x:Name="SearchCodigo"
+                   Grid.Column="0"
+                   Margin="5"
+                   Placeholder="Código"
+                   TextChanged="SearchCodigo_TextChanged" />
+            <Entry x:Name="SearchNome"
+                   Grid.Column="1"
+                   Margin="5"
+                   Placeholder="Nome"
+                   TextChanged="SearchBar_TextChanged" />
+            <Button x:Name="BtnPesquisar"
+                    Grid.Column="3"
+                    BackgroundColor="Transparent"
+                    Clicked="BtnPesquisar_Clicked"
+                    ImageSource="search50.png" />
+        </Grid>
+        <ScrollView>
+            <ListView x:Name="ListViewClientes"
+                      Margin="5"
+                      HasUnevenRows="True"
+                      HorizontalScrollBarVisibility="Never"
+                      IsPullToRefreshEnabled="True"
+                      SeparatorColor="Black"
+                      VerticalScrollBarVisibility="Never">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Tapped="ViewCell_Tapped">
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="0"
+                                           FontSize="20"
+                                           Text="ID: "
+                                           TextColor="Black" />
+                                    <Label Grid.Column="1"
+                                           Margin="5"
+                                           FontSize="15"
+                                           Text="{Binding Id}"
+                                           TextColor="Black" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="0"
+                                           FontSize="20"
+                                           Text="Nome: "
+                                           TextColor="Black" />
+                                    <Label Grid.Row="1"
+                                           Grid.Column="1"
+                                           FontSize="15"
+                                           Text="{Binding Nome}"
+                                           TextColor="Black" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="0"
+                                           FontSize="20"
+                                           Text="Endereço"
+                                           TextColor="Black" />
+                                    <Label Grid.Row="2"
+                                           Grid.Column="1"
+                                           FontSize="15"
+                                           Text="{Binding Endereco}"
+                                           TextColor="Black" />
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+        <Grid BackgroundColor="LightGray" HeightRequest="100">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <Button x:Name="BtnLimpar"
+                    Margin="5"
+                    Background="Transparent"
+                    Clicked="BtnLimpar_Clicked"
+                    FontAttributes="Bold"
+                    IsVisible="false"
+                    Text="Limpar Pesquisa"
+                    VerticalOptions="Start" />
+            <!--<Entry x:Name="FiltroNumero"
+                   Grid.Column="0"
+                   Margin="0,0,-65,14"
+                   HorizontalOptions="End"
+                   IsVisible="false"
+                   Keyboard="Numeric"
+                   Placeholder="0"
+                   Text="{Binding pagina}"
+                   VerticalOptions="End" />-->
+            <Button x:Name="BtnVoltar"
+                    Grid.Column="0"
+                    Margin="5,5,-35,15"
+                    Background="Transparent"
+                    Clicked="BtnVoltar_Clicked"
+                    CornerRadius="50"
+                    HorizontalOptions="EndAndExpand"
+                    ImageSource="back.png"
+                    IsVisible="false"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="25" />
+            <Button x:Name="BtnAvancar"
+                    Grid.Column="1"
+                    Margin="5,5,35,15"
+                    BackgroundColor="Transparent"
+                    Clicked="Pagenation_Clicked"
+                    CornerRadius="50"
+                    HorizontalOptions="EndAndExpand"
+                    ImageSource="forward.png"
+                    IsVisible="false"
+                    VerticalOptions="EndAndExpand"
+                    WidthRequest="25" />
+            <Button x:Name="BtnAdicionarCli"
+                    Grid.Column="2"
+                    Margin="5"
+                    BackgroundColor="Transparent"
+                    Clicked="BtnAdicionarCli_Clicked"
+                    CornerRadius="50"
+                    HorizontalOptions="EndAndExpand"
+                    ImageSource="add50.png"
+                    VerticalOptions="EndAndExpand" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

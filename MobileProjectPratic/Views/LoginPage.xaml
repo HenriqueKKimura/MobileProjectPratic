@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MobileProjectPratic.LoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:MobileProjectPratic.Effects"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="false">
+    <yummy:PancakeView BackgroundGradientEndPoint="0,0" BackgroundGradientStartPoint="0,1">
+        <yummy:PancakeView.BackgroundGradientStops>
+            <yummy:GradientStopCollection>
+                <yummy:GradientStop Offset="0.25" Color="#ADD8E6" />
+                <yummy:GradientStop Offset="0.99" Color="#1E90FF" />
+                <yummy:GradientStop Offset="0" Color="#1E90FF" />
+            </yummy:GradientStopCollection>
+        </yummy:PancakeView.BackgroundGradientStops>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Image Margin="30,5,15,-25"
+                   Source="logoaucom.png"
+                   VerticalOptions="StartAndExpand" />
+            <yummy:PancakeView Margin="30"
+                               BackgroundColor="#1E90FF"
+                               CornerRadius="30">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <yummy:PancakeView Grid.Row="0"
+                                       Margin="35,25,35,-55"
+                                       CornerRadius="15"
+                                       HorizontalOptions="FillAndExpand"
+                                       VerticalOptions="Center">
+                        <yummy:PancakeView.Border>
+                            <yummy:Border Thickness="2">
+                                <yummy:Border.GradientStops>
+                                    <yummy:GradientStopCollection>
+                                        <yummy:GradientStop Offset="0.99" Color="#ADD8E6" />
+                                        <yummy:GradientStop Offset="0.42" Color="#ADD8E6" />
+                                    </yummy:GradientStopCollection>
+                                </yummy:Border.GradientStops>
+                            </yummy:Border>
+                        </yummy:PancakeView.Border>
+                        <Entry x:Name="EntryCPF"
+                               Keyboard="Numeric"
+                               Placeholder="CPF"
+                               Text="{Binding CPF}"
+                               TextColor="White"
+                               VerticalOptions="CenterAndExpand">
+                            <Entry.Effects>
+                                <effects:PlainEntry />
+                            </Entry.Effects>
+                        </Entry>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView Grid.Row="1"
+                                       Margin="35,65,35,65"
+                                       CornerRadius="15"
+                                       VerticalOptions="CenterAndExpand">
+                        <yummy:PancakeView.Border>
+                            <yummy:Border Thickness="2">
+                                <yummy:Border.GradientStops>
+                                    <yummy:GradientStopCollection>
+                                        <yummy:GradientStop Offset="0.99" Color="#ADD8E6" />
+                                        <yummy:GradientStop Offset="0.12" Color="#ADD8E6" />
+                                    </yummy:GradientStopCollection>
+                                </yummy:Border.GradientStops>
+                            </yummy:Border>
+                        </yummy:PancakeView.Border>
+                        <Entry x:Name="EntrySenha"
+                               IsPassword="True"
+                               Placeholder="Senha"
+                               Text="{Binding Password}"
+                               TextColor="White"
+                               VerticalOptions="CenterAndExpand">
+                            <Entry.Effects>
+                                <effects:PlainEntry />
+                            </Entry.Effects>
+                        </Entry>
+                    </yummy:PancakeView>
+                    <Button x:Name="BtnLogin"
+                            Grid.Row="2"
+                            Margin="35,-55,35,5"
+                            Background=" #87CEFA"
+                            Clicked="BtnLogin_Clicked"
+                            CornerRadius="25"
+                            Text="Entrar" />
+                    <Button x:Name="BtnSignUp"
+                            Grid.Row="3"
+                            BackgroundColor="Transparent"
+                            Clicked="BtnSignUp_Clicked"
+                            Text="Registrar-se"
+                            TextColor="White" />
+                </Grid>
+            </yummy:PancakeView>
+        </StackLayout>
+    </yummy:PancakeView>
+</ContentPage>

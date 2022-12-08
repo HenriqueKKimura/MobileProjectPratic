@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MobileProjectPratic.Views.CadastrarCli"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout Background="#fff">
+        <ScrollView>
+            <Frame Margin="10"
+                   BackgroundColor="LightGray"
+                   CornerRadius="20">
+                <StackLayout>
+                    <!--  CNPJ  -->
+                    <Label FontSize="Subtitle"
+                           Text="CNPJ"
+                           TextColor="Black" />
+                    <Entry x:Name="CNPJ"
+                           Keyboard="Numeric"
+                           Placeholder="CNPJ"
+                           TextColor="Black"
+                           Unfocused="CNPJ_Unfocused" />
+                    <!--  Inscrição Estadual  -->
+                    <Label FontSize="Subtitle"
+                           Text="Inscrição Estadual"
+                           TextColor="Black" />
+                    <Entry x:Name="IE"
+                           IsReadOnly="True"
+                           Placeholder="Inscrição Estadual"
+                           Text="{Binding IE}"
+                           TextColor="Black" />
+                    <!--  Razão Social  -->
+                    <Label FontSize="Subtitle"
+                           Text="Razão Social"
+                           TextColor="Black" />
+                    <Entry x:Name="Nome"
+                           IsReadOnly="True"
+                           Placeholder="Razão Social"
+                           Text="{Binding Nome}"
+                           TextColor="Black" />
+                    <!--  Nome Fantasia  -->
+                    <Label FontSize="Subtitle"
+                           Text="Nome Fantasia"
+                           TextColor="Black" />
+                    <Entry x:Name="Fantasia"
+                           IsReadOnly="True"
+                           Placeholder="Nome Fantasia"
+                           Text="{Binding Fantasia}"
+                           TextColor="Black" />
+                    <!--  Longradouro  -->
+                    <Label FontSize="Subtitle"
+                           Text="Longradouro"
+                           TextColor="Black" />
+                    <Entry x:Name="Logradouro"
+                           IsReadOnly="True"
+                           Placeholder="Logradouro"
+                           Text="{Binding Logradouro}"
+                           TextColor="Black" />
+                    <!--  Número  -->
+                    <Label FontSize="Subtitle"
+                           Text="Número"
+                           TextColor="Black" />
+                    <Entry x:Name="Numero"
+                           IsReadOnly="True"
+                           Placeholder="Número"
+                           Text="{Binding Numero}"
+                           TextColor="Black" />
+                    <!--  Complemento  -->
+                    <Label FontSize="Subtitle"
+                           Text="Complemento"
+                           TextColor="Black" />
+                    <Entry x:Name="Complemento"
+                           IsReadOnly="True"
+                           Placeholder="Complemento"
+                           Text="{Binding Complemento}"
+                           TextColor="Black" />
+                    <!--  CEP  -->
+                    <Label FontSize="Subtitle"
+                           Text="CEP"
+                           TextColor="Black" />
+                    <Entry x:Name="Cep"
+                           IsReadOnly="True"
+                           Placeholder="CEP"
+                           Text="{Binding Cep}"
+                           TextColor="Black" />
+                    <!--  Bairro  -->
+                    <Label FontSize="Subtitle"
+                           Text="Bairro"
+                           TextColor="Black" />
+                    <Entry x:Name="Bairro"
+                           IsReadOnly="True"
+                           Placeholder="Bairro"
+                           Text="{Binding Bairro}"
+                           TextColor="Black" />
+                    <!--  Município  -->
+                    <Label FontSize="Subtitle"
+                           Text="Município"
+                           TextColor="Black" />
+                    <Entry x:Name="Municipio"
+                           IsReadOnly="True"
+                           Placeholder="Município"
+                           Text="{Binding Municipio}"
+                           TextColor="Black" />
+                    <!--  UF  -->
+                    <Label FontSize="Subtitle"
+                           Text="UF"
+                           TextColor="Black" />
+                    <Entry x:Name="Uf"
+                           IsReadOnly="True"
+                           Placeholder="UF"
+                           Text="{Binding Uf}"
+                           TextColor="Black" />
+                    <!--  Separador  -->
+                    <StackLayout>
+                        <Label FontSize="Title"
+                               Text="Dados de Contato"
+                               TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout Margin="1,-10,160,0"
+                                 Background="black"
+                                 HeightRequest="1" />
+                    <!--  Nome  -->
+                    <Label FontSize="Subtitle"
+                           Text="Nome"
+                           TextColor="Black" />
+                    <Entry x:Name="Nome_Rep_Legal"
+                           IsReadOnly="True"
+                           Placeholder="Nome do Responsável Legal"
+                           Text="{Binding Nome_Rep_Legal}"
+                           TextColor="Black" />
+                    <!--  Email  -->
+                    <Label FontSize="Subtitle"
+                           Text="Email"
+                           TextColor="Black" />
+                    <Entry x:Name="Email"
+                           IsReadOnly="True"
+                           Placeholder="Email"
+                           Text="{Binding Email}"
+                           TextColor="Black" />
+                    <!--  Telefone  -->
+                    <Label FontSize="Subtitle"
+                           Text="Telefone"
+                           TextColor="Black" />
+                    <Entry x:Name="Telefone"
+                           IsReadOnly="True"
+                           Placeholder="Telefone"
+                           Text="{Binding Telefone}"
+                           TextColor="Black" />
+                    <!--  Separador  -->
+                    <StackLayout>
+                        <Label FontSize="Title"
+                               Text="Informações Adicionais"
+                               TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout Margin="1,-10,100,0"
+                                 Background="black"
+                                 HeightRequest="1" />
+                    <!--  Observações Adicionais  -->
+                    <Label FontSize="Subtitle"
+                           Text="Observações"
+                           TextColor="Black" />
+                    <Entry Placeholder="Observações" />
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+        <!--  Botão Cadastro  -->
+        <Button x:Name="BtnCadastrar"
+                Margin="5"
+                BackgroundColor="Yellow"
+                Clicked="BtnCadastrar_Clicked"
+                CornerRadius="20"
+                IsEnabled="False"
+                Text="Cadastrar"
+                TextColor="Black" />
+    </StackLayout>
+</ContentPage>

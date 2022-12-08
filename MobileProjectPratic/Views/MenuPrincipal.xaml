@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MobileProjectPratic.MenuPrincipal"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <StackLayout Background="White">
+            <Frame Padding="1" BackgroundColor="#2b5797">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="5"
+                           FontSize="Title"
+                           Text="Gestão de Estoque"
+                           TextColor="White" />
+                    <Button x:Name="BtnSairApp"
+                            Grid.Column="1"
+                            Background="Transparent"
+                            Clicked="BtnSairApp_Clicked_1"
+                            HorizontalOptions="End"
+                            Text="SAIR"
+                            TextColor="White" />
+                </Grid>
+            </Frame>
+            <Frame Margin="5"
+                   Padding="1"
+                   BackgroundColor="LightGray"
+                   CornerRadius="20">
+                <Grid>
+                    <StackLayout Margin="5">
+                        <Label FontSize="Large"
+                               HorizontalOptions="Center"
+                               Text="O que Deseja Fazer?"
+                               TextColor="Black" />
+                        <Button x:Name="BtnClientes"
+                                Margin="5"
+                                Background="#2d89ef"
+                                BorderColor="#2b5797"
+                                BorderWidth="1"
+                                Clicked="BtnClientes_Clicked"
+                                ContentLayout="left,20"
+                                CornerRadius="25"
+                                ImageSource="client30.png"
+                                Text="CLIENTES"
+                                TextColor="White" />
+                        <Button x:Name="BtnProdutos"
+                                Margin="5"
+                                Background="#2d89ef"
+                                BorderColor="#2b5797"
+                                BorderWidth="1"
+                                Clicked="BtnProdutos_Clicked"
+                                ContentLayout="left,20"
+                                CornerRadius="25"
+                                ImageSource="battery30.png"
+                                Text="PRODUTOS"
+                                TextColor="White" />
+                        <Button x:Name="BtnOrcamentos"
+                                Margin="5"
+                                Background="#2d89ef"
+                                BorderColor="#2b5797"
+                                BorderWidth="1"
+                                Clicked="BtnOrcamentos_Clicked"
+                                ContentLayout="left,20"
+                                CornerRadius="25"
+                                ImageSource="budget30.png"
+                                Text="ORÇAMENTOS"
+                                TextColor="White" />
+                        <Button x:Name="BtnAgenda"
+                                Margin="5"
+                                Background="#2d89ef"
+                                BorderColor="#2b5797"
+                                BorderWidth="1"
+                                Clicked="BtnAgenda_Clicked"
+                                ContentLayout="left,20"
+                                CornerRadius="25"
+                                ImageSource="schedule30.png"
+                                Text="AGENDA"
+                                TextColor="White" />
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <Label Margin="5"
+                   FontSize="Subtitle"
+                   HorizontalOptions="EndAndExpand"
+                   Text="Versão Alpha  0.0.1"
+                   TextColor="Black"
+                   VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
